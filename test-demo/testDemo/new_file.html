@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <script src="http://r.img.cctvpic.com/library/script/jquery-1.7.2.min.js" type="text/javascript"></script>
+ <body>
+  <script type="text/javascript">
+  var qq;
+	function getNick(author){
+	$.getJSON('http://i.cctv.com/intf/napi/api.php?client=cntv_top&method=user.getNickName&userid='+author+'&cb=?&format=jsonp',function(data){
+		//alert(data.code);
+		if(data.code == 0){
+			//Author = data.content.nickname;
+			//alert(Author);
+			qq = data.content.nickname;
+			debugger
+			alert(qq);
+			editQQ(data.content.nickname)
+			return qq;
+		}else{
+			//alert("未登录");
+		}
+	});
+}
+getNick('48694498');/*获取昵称*/
+
+function editQQ(val) {
+	qq = val;
+
+	alert(qq);
+}
+alert(qq);
+  </script>
+ </body>
+</html>

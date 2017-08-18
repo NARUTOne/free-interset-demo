@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title></title>
+	<style>
+
+		label:focus {
+			outline: none;
+			color: #e4393c;
+		}
+		.text {
+			pointer-events: none;
+		}
+	</style>
+</head>
+<body>
+	<label tabindex='0' onClick='handleClick(this)'>
+		<input type='checkbox' />
+		<span class='text'>多项选择框</span>
+	</label>
+</body>
+<script type="text/javascript">
+	function getName() {
+		return {
+			name:'jack'    
+		}
+	}
+	console.log(getName().name)
+	function handleClick(e) {
+		console.log(e)
+	}
+</script>
+</html>

@@ -1,0 +1,72 @@
+<html>
+<head>
+  <title>Scrolling along the Z-Axis</title>
+  <!--
+  Example from http://eng.wealthfront.com/2012/03/scrolling-z-axis-with-css-3d-transforms.html
+  Assumes browser window is sized at a height of 400px (the size of the black box).
+  -->
+  <style>
+  body{height:calc(100vh + 100px + 50px + 50px);}
+  #viewport {
+   position:fixed;
+   -webkit-perspective:100px;
+   -webkit-perspective-origin:50% 50%;
+   border: 2px solid black;
+   height: 400px;
+   width: 400px;
+   left:50%;
+   margin-left:-200px;
+  }
+.box {
+   position:absolute;
+   width:100px;
+   height:100px;
+   left:50%;
+   top:50%;
+   margin-left:-50px;
+   margin-top:-50px;
+ }
+ #a {
+   background-color:rgba(255,0,0,.5);
+   border:2px solid red;
+   -webkit-transform:translateZ(-100px)
+ }
+ #b {
+   background-color:rgba(0,255,0,.5);
+   border:2px solid green;
+   -webkit-transform:translateZ(-50px)
+ }
+ #c {
+  background-color:rgba(0,0,255,.5);
+  border:2px solid blue;
+  -webkit-transform:translateZ(0px)
+ }
+  </style>
+</head>
+<body>
+  <div id="viewport">
+    <div class="box" id="a"></div>
+    <div class="box" id="b"></div>
+    <div class="box" id="c"></div>
+  </div>
+  <script>
+    var scrollPosition = document.body.scrollTop,
+        boxPositions = [-100, -50, 0];
+    function scrollDelta() {
+      var newScrollPosition = document.body.scrollTop,
+          delta = newScrollPosition - scrollPosition;
+      scrollPosition = document.body.scrollTop;
+      return delta;
+    }
+    function moveCamera() {
+      var boxes = document.getElementsByClassName("box"),
+          delta = scrollDelta();
+      for (var i=0,l=boxes.length;i<l;i++) {
+        boxPositions[i] += parseInt(delta);
+        boxes[i].style["-webkit-transform"] = "translateZ("+boxPositions[i]+"px)";
+      }
+    }
+    window.addEventListener("scroll", moveCamera, false);
+ </script>
+</body>
+</html>
