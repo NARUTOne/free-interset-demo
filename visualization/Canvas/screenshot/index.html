@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>canvas 模拟截图</title>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/jcanvas/16.7.3/jcanvas.min.js"></script>
+	<script src="https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+</head>
+<body>
+	<h3>canvas 截图测试</h3>
+	<p>
+		<b>资源支持</b>
+		<ui>
+			<ol>
+				<b>jquery</b>: jquery 库
+			</ol>
+			<ol>
+				<b>jcanvas</b>: jCanvas is a jQuery plugin that makes the HTML5 canvas easy to work with.
+			</ol>
+			<ol>
+				<b>html2canvas</b>: This script allows you to take "screenshots" of webpages or parts of it, directly on the users browser. 
+			</ol>
+		</ui>
+	</p>
+</body>
+<script type="text/javascript" src='./screenshot.js'></script>
+
+<script type="text/javascript">
+	var shot = new screenshot([16, 65], 27); // 开始快捷键设置为Shift + A；退出键为ESC
+	shot.init();
+
+</script>
+</html>
