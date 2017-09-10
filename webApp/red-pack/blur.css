@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
 .box {
   width: 800px;
   height: 600px;
@@ -13,11 +19,11 @@
 
 /* css 滤镜*/
 .blur {
-  filter: blur(6px);
-  -webkit-filter: blur(6px);  
-  -moz-filter: blur(6px);
-  -ms-filter: blur(6px);
-  -o-filter: blur(6px);
+  filter: blur(20px);
+  -webkit-filter: blur(20px);  
+  -moz-filter: blur(20px);
+  -ms-filter: blur(20px);
+  -o-filter: blur(20px);
 }
 
 /*
@@ -42,5 +48,39 @@
   left: 0;
   top: 0;
   z-index: 99;
-  background-color: red;
+  // background-color: red;
 }
+
+.btn {
+  display: block;
+  position: absolute;
+  z-index: 200;
+  width: 100px;
+  height: 30px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 5px;
+}
+
+#reset-btn {
+  left: 60px;
+  bottom: 32px;
+  background-color: #058;
+}
+
+#reset-btn:hover {
+  background-color: #047;
+}
+
+#show-btn {
+  right: 60px;
+  bottom: 32px;
+  background-color: #085;
+}
+
+#show-btn:hover {
+  background-color: #074;
+}
+

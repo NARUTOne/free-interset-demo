@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>canvas weiChat 红包</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
   <link rel="stylesheet" type="text/css" href="blur.css">
   <script type="text/javascript" src='jquery-3.2.1.min.js'></script>
 </head>
@@ -10,8 +11,10 @@
     <!-- css3 fillter 滤镜
     <img src="onepiece.jpg" id='blur-image' class='blur'/> -->
 
-    <img src="onepiece.jpg" id='blur-image' />
+    <img src="onepiece.jpg" id='blur-image' class="blur" />
     <canvas id='canvas'></canvas>
+    <a href="javascript:reset();" class="btn" id='reset-btn'>Reset</a>
+    <a href="javascript:show();" class="btn" id='show-btn'>Show</a>
   </div>
 </body>
 <script type="text/javascript" src='blur.js'></script>
